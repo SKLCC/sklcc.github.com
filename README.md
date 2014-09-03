@@ -8,6 +8,7 @@
 首先在本地先搭建相关的环境(可以在虚拟机)，需要git和ruby1.9.3。
 
 ```
+sudo apt-get install g++
 sudo apt-get install git
 sudo apt-get install ruby1.9.3
 ```
