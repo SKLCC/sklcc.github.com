@@ -4,7 +4,7 @@
   <title><![CDATA[SKLCC's KNOWLEDGE]]></title>
   <link href="http://SKLCC.github.io/atom.xml" rel="self"/>
   <link href="http://SKLCC.github.io/"/>
-  <updated>2014-09-03T14:24:41+08:00</updated>
+  <updated>2014-09-03T17:14:22+08:00</updated>
   <id>http://SKLCC.github.io/</id>
   <author>
     <name><![CDATA[SKLCC]]></name>
@@ -12,6 +12,99 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Add a New Service in Linux]]></title>
+    <link href="http://SKLCC.github.io/blog/2014/09/03/how-to-add-a-new-service-in-linux/"/>
+    <updated>2014-09-03T16:27:37+08:00</updated>
+    <id>http://SKLCC.github.io/blog/2014/09/03/how-to-add-a-new-service-in-linux</id>
+    <content type="html"><![CDATA[<h3>简介</h3>
+
+<p>linux中的service是用于方便对系统服务进行统一标准的管理，比如启动(start)，停止(stop)，重启(restart)和查看状态(status)等。</p>
+
+<p>service本身命令是一个shell脚本。它在/etc/init.d/目录中查找指定的服务脚本，然后调用该服务脚本进行服务。例如当我们输入<code>service ssh status</code>时，service程序其实是调用/etc/init.d/ssh脚本来完成获取sshd状态的功能。所以<code>service ssh status</code>也等同于<code>/etc/init.d/ssh status</code></p>
+
+<p>有时候我们需要某个程序能够开机自启动，例如apache程序。同时又要求程序在运行中可以随时停止，重启和查看状态。</p>
+
+<p>这时写一个脚本，并把它注册为一个service,就变得非常有用。</p>
+
+<h3>service的写法</h3>
+
+<p>service的写法有固定的模板，自己只要完成<code>start()</code>,<code>stop()</code>,<code>restart()</code>等方法中的逻辑就行。以/etc/init.d/ssh脚本为例来说：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>case "$1" in  
+</span><span class='line'>  start)
+</span><span class='line'>        ...
+</span><span class='line'>        ;;
+</span><span class='line'>  stop)
+</span><span class='line'>        ...
+</span><span class='line'>        ;;
+</span><span class='line'>  reload|force-reload)
+</span><span class='line'>        ...
+</span><span class='line'>        ;;
+</span><span class='line'>  restart)
+</span><span class='line'>        ...
+</span><span class='line'>        ;;
+</span><span class='line'>  try-restart)
+</span><span class='line'>        ...
+</span><span class='line'>        ;;
+</span><span class='line'>  status)
+</span><span class='line'>        ...
+</span><span class='line'>        ;;
+</span><span class='line'>  *)
+</span><span class='line'>        ...
+</span><span class='line'>esac</span></code></pre></td></tr></table></div></figure>
+
+
+<p>一般自定义service脚本只需要约定俗成的实现start,stop,restart,status和*5种情况就可以了。其中*情况是用于输出service的用法的，例如ssh的*的输出就是：</p>
+
+<blockquote><p>Usage: /etc/init.d/ssh {start|stop|reload|force-reload|restart|try-restart|status}</p></blockquote>
+
+<p>至于service脚本中具体每个情况的实现需要根据具体情况而编写，这里就不赘述了。如有疑问可以参考/etc/init.d/下的其他的脚本。</p>
+
+<h3>注册</h3>
+
+<p>编写完service脚本之后，并不就意味着可以直接使用了，还需要把自定义的service脚本注册到系统里。</p>
+
+<p>这里所谓的注册其实就是：</p>
+
+<blockquote><ol>
+<li>把脚本拷贝至/etc/init.d/下（本例中自定义service脚本叫test）<br/>
+<code>sudo cp test /etc/init.d/ &amp; cd /etc/init.d</code></li>
+<li>修改脚本的权限  <br/>
+<code>sudo chmod 755 test</code></li>
+<li>配置开机启动<br/>
+在ubuntu10.04之前版本和在redhat/centos/fedora中都是使用chkconfig来管理的，但是在ubuntu之后的版本就没有了，在这里我们使用update-rc.d来替代chkconfig。具体可以参考<a href="http://blog.csdn.net/dante_k7/article/details/7213151">这里</a><br/>
+<code>sudo update-rc.d test defaults</code></li>
+</ol>
+</blockquote>
+
+<p>经过上述步骤test已经成功注册成service了,可以通过<code>sudo service test start|stop|restart</code>或者<code>sudo /etc/init.d/test start|stop|restart</code>启动，停止，重启服务
+过了一段时间你不再需要服务了,运行<code>sudo update-rc.d -f test remove</code>卸载服务</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello China]]></title>
