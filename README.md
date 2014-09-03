@@ -28,9 +28,10 @@ git checkout -t source
 ### 新建一篇博客
 
 1. 新建一篇博客`rake new_post["YOUR BLOG TITLE"]`，生成的博客会在`source/_posts/YYYY-MM-DD-YOUR-BLOG-TITLE.markdown`文件中  
-2. 修改此文件，在categories后添加本篇博客的标签，目前的标签有：linux、life。  
+2. 修改此文件，在categories后添加本篇博客的标签，目前的标签有：linux、life   
 3. 然后在下一行添加：`author: YOUR NAME`  
-4. 然后在`---`的下一行开始编写博客正文内容。 
+4. 然后在`---`的下一行开始编写博客正文内容   
+5. 完成后可以使用`rake preview`进行预览  
 
 ### 编写完成后
 
