@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>SKLCC&#8217;s KNOWLEDGE</title>
+  <title>How to Run a Service at Background - SKLCC&#8217;s KNOWLEDGE</title>
   <meta name="author" content="SKLCC">
 
   
-  <meta name="description" content="你只看到我的代码，却没看到我的努力，你有你的IDE,我有我的作VIM，你嘲笑我
-码不够优雅不配部署，我可怜你总是bug。你可以轻视我们的代码，我们会证明这是
-谁的时代。Coding是注定快乐的旅行，路上总少不了开黑和开撸，但那又怎样。哪怕
-挂机，也要挂得平静 我是SKLCCER,我为自己码码。 &hellip;">
+  <meta name="description" content="我们经常会遇到这么一种情况：ssh/telnet到远程的一台主机，然后执行了一个需要长时间运行的程序，但是由于网络原因导致连接不稳定，在当连接断了之后，我们在远端主机上运行的这个程序也会被终止。这时我们就希望能把它转至后台运行，并且当客户端失去连接之后也不会中断程序。 一般后台运行 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://SKLCC.github.io">
+  <link rel="canonical" href="http://SKLCC.github.io/blog/2014/09/03/how-to-run-a-service-at-background">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="SKLCC's KNOWLEDGE" type="application/atom+xml">
@@ -66,54 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/09/03/hello-china/">Hello China</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-09-03T10:26:48+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>10:26 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>你只看到我的代码，却没看到我的努力，你有你的IDE,我有我的作VIM，你嘲笑我
-码不够优雅不配部署，我可怜你总是bug。你可以轻视我们的代码，我们会证明这是
-谁的时代。Coding是注定快乐的旅行，路上总少不了开黑和开撸，但那又怎样。哪怕
-挂机，也要挂得平静 我是SKLCCER,我为自己码码。不在乎别人的感受，我只在乎，
-我的代码不出bug。</p>
-
-<p>言归正传，对于技术，乍之初欢，不如久处不厌。前路光明。何不拿起键盘，握紧鼠标，
-来一场痛快的脑暴，用一个下午的时间，写一个曾经里一直想写却没写的东西。不做高大上，
-只把一个简单的东西做到极致。这就是SKLCC。君子之学，死而后已。</p>
-
-<p>From Mike at Hangzhou mogujie.com</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/03/how-to-run-a-service-at-background/">How to Run a Service at Background</a></h1>
+      <h1 class="entry-title">How to Run a Service at Background</h1>
     
     
       <p class="meta">
@@ -129,7 +84,7 @@
   </header>
 
 
-  <div class="entry-content"><p>我们经常会遇到这么一种情况：ssh/telnet到远程的一台主机，然后执行了一个需要长时间运行的程序，但是由于网络原因导致连接不稳定，在当连接断了之后，我们在远端主机上运行的这个程序也会被终止。这时我们就希望能把它转至后台运行，并且当客户端失去连接之后也不会中断程序。</p>
+<div class="entry-content"><p>我们经常会遇到这么一种情况：ssh/telnet到远程的一台主机，然后执行了一个需要长时间运行的程序，但是由于网络原因导致连接不稳定，在当连接断了之后，我们在远端主机上运行的这个程序也会被终止。这时我们就希望能把它转至后台运行，并且当客户端失去连接之后也不会中断程序。</p>
 
 <h3>一般后台运行</h3>
 
@@ -200,18 +155,50 @@
 <strong>setsid</strong> 让程序在一个新的session中运行，所以父进程就不会是当前终端<br/>
 <strong>(shell)</strong> 与setsid一样的效果</p></blockquote>
 </div>
-  
-  
 
 
-    </article>
+  <footer>
+    <p class="meta">
+      
   
-  <div class="pagination">
+
+<span class="byline author vcard">Posted by <span class="fn">andy</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-09-03T10:03:15+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>10:03 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/09/03/hello-china/" title="Next Post: Hello China">Hello China &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -235,6 +222,7 @@
 
   
 </aside>
+
 
     </div>
   </div>

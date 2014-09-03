@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | SKLCC's KNOWLEDGE]]></title>
+  <link href="http://SKLCC.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://SKLCC.github.io/"/>
+  <updated>2014-09-03T14:16:00+08:00</updated>
+  <id>http://SKLCC.github.io/</id>
+  <author>
+    <name><![CDATA[SKLCC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Run a Service at Background]]></title>
+    <link href="http://SKLCC.github.io/blog/2014/09/03/how-to-run-a-service-at-background/"/>
+    <updated>2014-09-03T10:03:15+08:00</updated>
+    <id>http://SKLCC.github.io/blog/2014/09/03/how-to-run-a-service-at-background</id>
+    <content type="html"><![CDATA[<p>我们经常会遇到这么一种情况：ssh/telnet到远程的一台主机，然后执行了一个需要长时间运行的程序，但是由于网络原因导致连接不稳定，在当连接断了之后，我们在远端主机上运行的这个程序也会被终止。这时我们就希望能把它转至后台运行，并且当客户端失去连接之后也不会中断程序。</p>
+
+<h3>一般后台运行</h3>
+
+<p>要让一个程序在后台运行有好几种方法，首先就是<code>ctrl+z</code>，使用<code>ctrl+z</code>会让程序暂时挂起在后台，然后可以看到系统提示：</p>
+
+<blockquote><p>[1]+ Stopped /root/bin/rsync.sh</p></blockquote>
+
+<p>其中&#8217;[1]&lsquo;是后台作业号，我们可以通过使用<code>bg</code>命令来让它在后台运行：<code>bg 1 # bg + 后台作业号</code>，然后我们可以通过<code>jobs</code>命令来查看所有后台程序的运行状态</p>
+
+<blockquote><p>jobs<br/>
+[1]+ Running /root/bin/rsync.sh &amp;</p></blockquote>
+
+<p>如果想把它调回前台可以使用<code>fg 1</code>，当然这样之后就只能在控制台中等待这个程序运行结束。</p>
+
+<p>总结一下就是：</p>
+
+<blockquote><p><strong>ctrl+z</strong> 把程序挂起在后台（此时为挂起状态，在后台但是不会继续运行）<br/>
+<strong>bg %jobnumber</strong> 把任务在后台运行起来<br/>
+<strong>fg %jobnumber</strong> 把任务转到前台运行<br/>
+<strong>jobs</strong> 查看当前后台所有的任务的状态<br/>
+<strong>&amp;</strong> 在命令之后加上这个符号表示让此命令运行在后台（但是命令的输出还是会从标准输出显示，也就是会出现在控制台）</p></blockquote>
+
+<h3>客户端失连之后程序退出的原因</h3>
+
+<p>上面提到的方法只是能够让程序在后台运行，但是当客户端失去连接之后程序还是会被终止，原因是由于用以上方法在后台执行程序，程序的父进程还是当前终端的进程，所以当当前终端退出的时候（也就是客户端失去连接的时候），也就意味着程序的父进程退出了，此时系统会发送<code>hangup</code>型号给所有的子进程，子进程收到此消息之后也会退出程序，所以如果我们希望程序在客户端失去连接之后仍然能运行的话，那么只有两种方法：</p>
+
+<blockquote><ol>
+<li>让程序忽略<code>hangup</code>信号</li>
+<li>让程序的父进程是init进程，而不是当前终端的进程</li>
+</ol>
+</blockquote>
+
+<h3>解决方案</h3>
+
+<h4>忽略hangup信号</h4>
+
+<p>使用<code>nohup</code>命令可以实现让命令忽略hangup信号，在它的man-page中也有说明：</p>
+
+<blockquote><p>nohup - run a command immune to hangups, with output to a non-tty</p></blockquote>
+
+<p>用法也很简单，只需要在原来的命令前面加上nohup就行了，例如：<code>nohup ./test &amp;</code> 如果手动重定向标准输出的话，nohup命令会自动把命令的标准输出重定向到当前目录的nohup.out文件中</p>
+
+<p>BTW，在重定向输出的时候，1表示标准输出，2表示错误输出，0表示标准输入，如果需要重定向一个程序的标准输出的话只需要<code>./test 1&gt;test.out &amp;</code>即可，如果需要让一个程序在后台运行并且不会有任何输出到终端的话，需要把错误输出也重定向，即<code>./test 1&gt;test.log 2&gt;test.err &amp;</code>，如果不需要记录命令的输出信息的话，可以重定向到<code>/dev/null</code>文件，这是linux中的一个黑洞文件，任何输出到这个文件的信息都会被吞噬，即<code>./test &amp;&gt;/dev/null &amp;</code>，这条命令也等于<code>./test 1&gt;/dev/null 2&gt;&amp;1</code>，现在后者见的比较多，前者我在baidu和bing中都没怎么搜的到，但我记得是可以的。在后者中，先是把标准输出重定向到黑洞设备，然后把错误输出重定向到标准输出，这样所有输出都会被吃掉了。</p>
+
+<h4>父进程为init</h4>
+
+<p>使用<code>setsid</code>命令就可以让命令的父进程为init，在它的man-page的说明是：</p>
+
+<blockquote><p>setsid - run a program in a new session</p></blockquote>
+
+<p>至于它的使用方法也很简单，和<code>nohup</code>一样，只要在原来的命令之前加上<code>setsid</code>即可，例如：
+<code>
+$setsid ./test &amp;  
+$ps -ef | grep test  
+sklcc   2105    1   0 12:58 ?   00:00:00 ./test &amp;  
+sklcc   2108    2090    0 12:58 pts/0   00:00:00 grep --color=auto test  
+</code>
+另外还有一个方法也可以实现同样的效果，就是加括号，例如<code>(./test &amp;)</code>。除了以上提到的3种方法之外，还有一种方法就是写成service，关于如何写service，在下篇博客会进行介绍。</p>
+
+<p>总结一下：</p>
+
+<blockquote><p><strong>nohup</strong> 让程序忽略hangup信号从而让程序可以继续运行<br/>
+<strong>setsid</strong> 让程序在一个新的session中运行，所以父进程就不会是当前终端<br/>
+<strong>(shell)</strong> 与setsid一样的效果</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
