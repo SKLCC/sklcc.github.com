@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | SKLCC's KNOWLEDGE]]></title>
-  <link href="http://SKLCC.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <title><![CDATA[SKLCC's KNOWLEDGE]]></title>
+  <link href="http://SKLCC.github.io/atom.xml" rel="self"/>
   <link href="http://SKLCC.github.io/"/>
   <updated>2014-09-03T14:24:41+08:00</updated>
   <id>http://SKLCC.github.io/</id>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello China]]></title>
+    <link href="http://SKLCC.github.io/blog/2014/09/03/hello-china/"/>
+    <updated>2014-09-03T10:26:48+08:00</updated>
+    <id>http://SKLCC.github.io/blog/2014/09/03/hello-china</id>
+    <content type="html"><![CDATA[<p>你只看到我的代码，却没看到我的努力，你有你的IDE,我有我的作VIM，你嘲笑我
+码不够优雅不配部署，我可怜你总是bug。你可以轻视我们的代码，我们会证明这是
+谁的时代。Coding是注定快乐的旅行，路上总少不了开黑和开撸，但那又怎样。哪怕
+挂机，也要挂得平静 我是SKLCCER,我为自己码码。不在乎别人的感受，我只在乎，
+我的代码不出bug。</p>
+
+<p>言归正传，对于技术，乍之初欢，不如久处不厌。前路光明。何不拿起键盘，握紧鼠标，
+来一场痛快的脑暴，用一个下午的时间，写一个曾经里一直想写却没写的东西。不做高大上，
+只把一个简单的东西做到极致。这就是SKLCC。君子之学，死而后已。</p>
+
+<p>From Mike at Hangzhou mogujie.com</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Run a Service at Background]]></title>
@@ -69,14 +88,19 @@
 
 <blockquote><p>setsid - run a program in a new session</p></blockquote>
 
-<p>至于它的使用方法也很简单，和<code>nohup</code>一样，只要在原来的命令之前加上<code>setsid</code>即可，例如：
-<code>
-$setsid ./test &amp;  
-$ps -ef | grep test  
-sklcc   2105    1   0 12:58 ?   00:00:00 ./test &amp;  
-sklcc   2108    2090    0 12:58 pts/0   00:00:00 grep --color=auto test  
-</code>
-另外还有一个方法也可以实现同样的效果，就是加括号，例如<code>(./test &amp;)</code>。除了以上提到的3种方法之外，还有一种方法就是写成service，关于如何写service，在下篇博客会进行介绍。</p>
+<p>至于它的使用方法也很简单，和<code>nohup</code>一样，只要在原来的命令之前加上<code>setsid</code>即可，例如：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$setsid ./test &  
+</span><span class='line'>$ps -ef | grep test  
+</span><span class='line'>sklcc 2105    1   0 12:58 ?   00:00:00 ./test &  
+</span><span class='line'>sklcc 2108    2090    0 12:58 pts/0   00:00:00 grep --color=auto test  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>另外还有一个方法也可以实现同样的效果，就是加括号，例如<code>(./test &amp;)</code>。除了以上提到的3种方法之外，还有一种方法就是写成service，关于如何写service，在下篇博客会进行介绍。</p>
 
 <p>总结一下：</p>
 
