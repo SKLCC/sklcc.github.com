@@ -12,7 +12,7 @@ sudo apt-get install git
 sudo apt-get install ruby1.9.3
 ```
 
-然后`gem install bundler`并且`bundle install`。
+然后`sudo gem install bundler`
 
 ### 编写文章前的工作
 
@@ -22,7 +22,8 @@ fork本项目，然后clone到本地并切换到source分支（博客都是在so
 git clone https://github.com/andycoder7/sklcc.github.com.git
 cd sklcc.github.com/
 git fetch -p
-git checkout -t source
+git checkout -t origin/source  
+bundle install  
 ```
 
 ### 新建一篇博客
