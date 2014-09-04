@@ -23,17 +23,23 @@
   
   <url>
     <loc>http://SKLCC.github.io/</loc>
-    <lastmod>2014-09-04T08:57:01+08:00</lastmod>
+    <lastmod>2014-09-04T10:06:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://SKLCC.github.io/blog/archives/</loc>
-    <lastmod>2014-09-04T08:57:01+08:00</lastmod>
+    <lastmod>2014-09-04T10:06:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
+  
+  <url>
+    <loc>http://SKLCC.github.io/404.html</loc>
+    <lastmod>2014-09-04T10:05:17Z</lastmod>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>
