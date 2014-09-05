@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "How To Run A Service at Background"
+title: "如何在Linux后台运行一个程序"
 date: 2014-09-03 10:03:15 +0800
 comments: true
 categories: Linux
 author: andy
 ---
+
+From Andy at SuZhou sklcc.com
 
 我们经常会遇到这么一种情况：ssh/telnet到远程的一台主机，然后执行了一个需要长时间运行的程序，但是由于网络原因导致连接不稳定，在当连接断了之后，我们在远端主机上运行的这个程序也会被终止。这时我们就希望能把它转至后台运行，并且当客户端失去连接之后也不会中断程序。 
 ### 一般后台运行  
@@ -15,6 +17,8 @@ author: andy
 > [1]+ Stopped /root/bin/rsync.sh  
 
 其中'[1]'是后台作业号，我们可以通过使用`bg`命令来让它在后台运行：`bg 1 # bg + 后台作业号`，然后我们可以通过`jobs`命令来查看所有后台程序的运行状态  
+
+<!--more-->
 
 > jobs  
 > [1]+ Running /root/bin/rsync.sh &  

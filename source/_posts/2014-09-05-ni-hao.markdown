@@ -1,10 +1,13 @@
 ---
 layout: post
-title: "Hello China"
-date: 2014-09-03 10:26:48 +0800
+title: "你好,中国"
+date: 2014-09-05 11:53:37 +0800
 comments: true
 categories: life
+author: mike
 ---
+
+From Mike at Hangzhou mogujie.com
 
 你只看到我的代码，却没看到我的努力，你有你的IDE,我有我的作VIM，你嘲笑我
 码不够优雅不配部署，我可怜你总是bug。你可以轻视我们的代码，我们会证明这是
@@ -17,4 +20,3 @@ categories: life
 只把一个简单的东西做到极致。这就是SKLCC。君子之学，死而后已。
 
 
-From Mike at Hangzhou mogujie.com

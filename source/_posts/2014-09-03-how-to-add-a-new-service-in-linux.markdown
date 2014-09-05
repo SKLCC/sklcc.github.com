@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "How to add a new service in linux"
+title: "如何在Linux上新建一个Service"
 date: 2014-09-03 16:27:37 +0800
 comments: true
-categories: linux
+categories: Linux
 author: jackson,andy
 ---
+
+From Andy, Jackson at SuZhou sklcc.com
 
 ### 简介
 
@@ -16,6 +18,8 @@ service本身命令是一个shell脚本。它在/etc/init.d/目录中查找指�
 有时候我们需要某个程序能够开机自启动，例如apache程序。同时又要求程序在运行中可以随时停止，重启和查看状态。
 
 这时写一个脚本，并把它注册为一个service,就变得非常有用。
+
+<!--more-->
 
 ### service的写法
 
@@ -68,3 +72,4 @@ esac
 
 经过上述步骤test已经成功注册成service了,可以通过`sudo service test start|stop|restart`或者`sudo /etc/init.d/test start|stop|restart`启动，停止，重启服务
 过了一段时间你不再需要服务了,运行`sudo update-rc.d -f test remove`卸载服务
+
