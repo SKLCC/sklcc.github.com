@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | SKLCC's KNOWLEDGE]]></title>
+  <title><![CDATA[Category: Linux | SKLCC's 藏经阁]]></title>
   <link href="http://SKLCC.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://SKLCC.github.io/"/>
-  <updated>2014-09-04T10:06:29+08:00</updated>
+  <updated>2014-09-15T22:51:39+08:00</updated>
   <id>http://SKLCC.github.io/</id>
   <author>
     <name><![CDATA[SKLCC]]></name>
@@ -14,11 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How to Add a New Service in Linux]]></title>
+    <title type="html"><![CDATA[如何在Linux上新建一个Service]]></title>
     <link href="http://SKLCC.github.io/blog/2014/09/03/how-to-add-a-new-service-in-linux/"/>
     <updated>2014-09-03T16:27:37+08:00</updated>
     <id>http://SKLCC.github.io/blog/2014/09/03/how-to-add-a-new-service-in-linux</id>
-    <content type="html"><![CDATA[<h3>简介</h3>
+    <content type="html"><![CDATA[<p>From Andy, Jackson at SuZhou sklcc.com</p>
+
+<h3>简介</h3>
 
 <p>linux中的service是用于方便对系统服务进行统一标准的管理，比如启动(start)，停止(stop)，重启(restart)和查看状态(status)等。</p>
 
@@ -27,6 +29,9 @@
 <p>有时候我们需要某个程序能够开机自启动，例如apache程序。同时又要求程序在运行中可以随时停止，重启和查看状态。</p>
 
 <p>这时写一个脚本，并把它注册为一个service,就变得非常有用。</p>
+
+<!--more-->
+
 
 <h3>service的写法</h3>
 
@@ -85,11 +90,13 @@ esac
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[How to Run a Service at Background]]></title>
+    <title type="html"><![CDATA[如何在Linux后台运行一个程序]]></title>
     <link href="http://SKLCC.github.io/blog/2014/09/03/how-to-run-a-service-at-background/"/>
     <updated>2014-09-03T10:03:15+08:00</updated>
     <id>http://SKLCC.github.io/blog/2014/09/03/how-to-run-a-service-at-background</id>
-    <content type="html"><![CDATA[<p>我们经常会遇到这么一种情况：ssh/telnet到远程的一台主机，然后执行了一个需要长时间运行的程序，但是由于网络原因导致连接不稳定，在当连接断了之后，我们在远端主机上运行的这个程序也会被终止。这时我们就希望能把它转至后台运行，并且当客户端失去连接之后也不会中断程序。</p>
+    <content type="html"><![CDATA[<p>From Andy at SuZhou sklcc.com</p>
+
+<p>我们经常会遇到这么一种情况：ssh/telnet到远程的一台主机，然后执行了一个需要长时间运行的程序，但是由于网络原因导致连接不稳定，在当连接断了之后，我们在远端主机上运行的这个程序也会被终止。这时我们就希望能把它转至后台运行，并且当客户端失去连接之后也不会中断程序。</p>
 
 <h3>一般后台运行</h3>
 
@@ -98,6 +105,9 @@ esac
 <blockquote><p>[1]+ Stopped /root/bin/rsync.sh</p></blockquote>
 
 <p>其中&#8217;[1]&lsquo;是后台作业号，我们可以通过使用<code>bg</code>命令来让它在后台运行：<code>bg 1 # bg + 后台作业号</code>，然后我们可以通过<code>jobs</code>命令来查看所有后台程序的运行状态</p>
+
+<!--more-->
+
 
 <blockquote><p>jobs<br/>
 [1]+ Running /root/bin/rsync.sh &amp;</p></blockquote>

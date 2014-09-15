@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Life | SKLCC's KNOWLEDGE]]></title>
+  <title><![CDATA[Category: Life | SKLCC's 藏经阁]]></title>
   <link href="http://SKLCC.github.io/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://SKLCC.github.io/"/>
-  <updated>2014-09-04T10:06:29+08:00</updated>
+  <updated>2014-09-15T22:51:39+08:00</updated>
   <id>http://SKLCC.github.io/</id>
   <author>
     <name><![CDATA[SKLCC]]></name>
@@ -14,11 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hello China]]></title>
-    <link href="http://SKLCC.github.io/blog/2014/09/03/hello-china/"/>
-    <updated>2014-09-03T10:26:48+08:00</updated>
-    <id>http://SKLCC.github.io/blog/2014/09/03/hello-china</id>
-    <content type="html"><![CDATA[<p>你只看到我的代码，却没看到我的努力，你有你的IDE,我有我的作VIM，你嘲笑我
+    <title type="html"><![CDATA[你好,中国]]></title>
+    <link href="http://SKLCC.github.io/blog/2014/09/05/ni-hao/"/>
+    <updated>2014-09-05T11:53:37+08:00</updated>
+    <id>http://SKLCC.github.io/blog/2014/09/05/ni-hao</id>
+    <content type="html"><![CDATA[<p>From Mike at Hangzhou mogujie.com</p>
+
+<p>你只看到我的代码，却没看到我的努力，你有你的IDE,我有我的作VIM，你嘲笑我
 码不够优雅不配部署，我可怜你总是bug。你可以轻视我们的代码，我们会证明这是
 谁的时代。Coding是注定快乐的旅行，路上总少不了开黑和开撸，但那又怎样。哪怕
 挂机，也要挂得平静 我是SKLCCER,我为自己码码。不在乎别人的感受，我只在乎，
@@ -27,8 +29,6 @@
 <p>言归正传，对于技术，乍之初欢，不如久处不厌。前路光明。何不拿起键盘，握紧鼠标，
 来一场痛快的脑暴，用一个下午的时间，写一个曾经里一直想写却没写的东西。不做高大上，
 只把一个简单的东西做到极致。这就是SKLCC。君子之学，死而后已。</p>
-
-<p>From Mike at Hangzhou mogujie.com</p>
 ]]></content>
   </entry>
   
