@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | SKLCC's 藏经阁]]></title>
   <link href="http://SKLCC.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://SKLCC.github.io/"/>
-  <updated>2014-11-22T00:29:55+08:00</updated>
+  <updated>2014-12-03T03:01:25+08:00</updated>
   <id>http://SKLCC.github.io/</id>
   <author>
     <name><![CDATA[SKLCC]]></name>
@@ -33,12 +33,12 @@
 
 <h3>流程</h3>
 
-<!--more-->
-
-
 <h4>1. 安装sublime text 3</h4>
 
 <p>进入sublime text 3官方<a href="http://www.sublimetext.com/3">下载页面</a>，选择<a href="http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3065_amd64.deb">Ubuntu 64 bit</a>，下载完成后双击安装即可。</p>
+
+<!--more-->
+
 
 <p><img src="/images/how_to_input_chinese_in_subl/after_install_sub3.png"></p>
 

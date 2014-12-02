@@ -9,11 +9,12 @@
   <meta name="author" content="SKLCC">
 
   
-  <meta name="description" content="From Andy at SuZhou sklcc.com 版本说明 Ubuntu 14.04.1 Trusty Tahr 64bit
-Sublime Text 3065
-fcitx 4.2.8.4
-搜狗输入法 1.1.0.0037
-gcc 4.8.2 流程 ">
+  <meta name="description" content="From Andy at SuZhou sklcc.com Overview 0x01 背景和简介
+0x02 逻辑结构与基本概念
+0x03 读、写、删、HA
+0x04 其他细节
+0x05 测试数据
+0x06 结束语 背景和简介 GFS即Google File System， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,59 @@ gcc 4.8.2 流程 ">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/12/02/something-about-gfs/">GFS简介</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-02T02:50:33+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>2:50 am</span></time>
+        
+           | <a href="/blog/2014/12/02/something-about-gfs/#disqus_thread"
+             data-disqus-identifier="http://SKLCC.github.io/blog/2014/12/02/something-about-gfs/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>From Andy at SuZhou sklcc.com</p>
+
+<h3>Overview</h3>
+
+<ul>
+<li>0x01 背景和简介</li>
+<li>0x02 逻辑结构与基本概念</li>
+<li>0x03 读、写、删、HA</li>
+<li>0x04 其他细节</li>
+<li>0x05 测试数据</li>
+<li>0x06 结束语</li>
+</ul>
+
+
+<h3>背景和简介</h3>
+
+<p>GFS即Google File System，出自Google在SOSP（2003）的一篇论文《The Google File System》，为Google三宝之一，其余还有Map Reduce和Big Table，当前很火的Hadoop系统中的HDFS、MapReduce和HBase就是其开源实现。由于Hadoop离线批处理的性质以及其他缺点，Google于2014年6月发布其Google Data Cloud服务，该服务支持实时操作和更复杂的逻辑处理，并且效率也有提升。据说在Google公司内部，之后的代码都运行在这个新平台上。Spark为其开源实现。本质上说Spark仍旧是MapReduce和批处理，只是分的更小更细。另外，大数据的实时处理系统还有Storm。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/12/02/something-about-gfs/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/11/21/how-to-input-chinese-in-sub/">如何在Sublime Text 3中输入中文</a></h1>
     
     
@@ -108,6 +162,10 @@ gcc 4.8.2 流程 ">
 
 
 <h3>流程</h3>
+
+<h4>1. 安装sublime text 3</h4>
+
+<p>进入sublime text 3官方<a href="http://www.sublimetext.com/3">下载页面</a>，选择<a href="http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3065_amd64.deb">Ubuntu 64 bit</a>，下载完成后双击安装即可。</p>
 
 </div>
   
@@ -269,6 +327,10 @@ gcc 4.8.2 流程 ">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/12/02/something-about-gfs/">GFS简介</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/11/21/how-to-input-chinese-in-sub/">如何在Sublime Text 3中输入中文</a>
       </li>
     
@@ -289,7 +351,7 @@ gcc 4.8.2 流程 ">
 
 <section>
   <h1>Tag Cloud</h1>
-    <span id="Category-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2FSKLCC.github.io%2Fblog%2Fcategories%2Flife%27+style%3D%27font-size%3A+20.0%25%27%3Elife%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2FSKLCC.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+40.0%25%27%3Elinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2FSKLCC.github.io%2Fblog%2Fcategories%2Fsublime%27+style%3D%27font-size%3A+20.0%25%27%3Esublime%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="Category-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2FSKLCC.github.io%2Fblog%2Fcategories%2Fgfs%27+style%3D%27font-size%3A+20.0%25%27%3Egfs%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2FSKLCC.github.io%2Fblog%2Fcategories%2Flife%27+style%3D%27font-size%3A+20.0%25%27%3Elife%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2FSKLCC.github.io%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+40.0%25%27%3Elinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2FSKLCC.github.io%2Fblog%2Fcategories%2Fsublime%27+style%3D%27font-size%3A+20.0%25%27%3Esublime%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 <section>
