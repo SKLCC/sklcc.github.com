@@ -3,53 +3,29 @@
   
   
   <url>
-    <loc>http://SKLCC.github.io/blog/2014/12/02/something-about-gfs/</loc>
-    <lastmod>2014-12-02T02:50:33+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://SKLCC.github.io/blog/2014/11/21/how-to-input-chinese-in-sub/</loc>
-    <lastmod>2014-11-21T23:53:48+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://SKLCC.github.io/blog/2014/09/05/ni-hao/</loc>
+    <loc>http://SKLCC-Library.github.io/blog/2014/09/05/ni-hao/</loc>
     <lastmod>2014-09-05T11:53:37+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
-  <url>
-    <loc>http://SKLCC.github.io/blog/2014/09/03/how-to-add-a-new-service-in-linux/</loc>
-    <lastmod>2014-09-03T16:27:37+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
   
   <url>
-    <loc>http://SKLCC.github.io/blog/2014/09/03/how-to-run-a-service-at-background/</loc>
-    <lastmod>2014-09-03T10:03:15+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  
-  <url>
-    <loc>http://SKLCC.github.io/</loc>
-    <lastmod>2014-12-03T03:01:25+08:00</lastmod>
+    <loc>http://SKLCC-Library.github.io/</loc>
+    <lastmod>2015-01-23T22:54:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>http://SKLCC.github.io/blog/archives/</loc>
-    <lastmod>2014-12-03T03:01:25+08:00</lastmod>
+    <loc>http://SKLCC-Library.github.io/blog/archives/</loc>
+    <lastmod>2015-01-23T22:54:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   
   <url>
-    <loc>http://SKLCC.github.io/404.html</loc>
+    <loc>http://SKLCC-Library.github.io/404.html</loc>
     <lastmod>2014-11-21T23:49:03Z</lastmod>
     <priority>0.6</priority>
   </url>

@@ -20,8 +20,8 @@ sudo apt-get install ruby1.9.3
 fork本项目，然后clone到本地并切换到source分支（博客都是在source分支上写），以我（andycoder7）为例的话，（fork就不讲了，鼠标点一下就行了）就是：
 
 ```
-git clone https://github.com/andycoder7/sklcc.github.com.git
-cd sklcc.github.com/
+git clone https://github.com/andycoder7/sklcc-library.github.com.git
+cd sklcc-library.github.com/
 git fetch -p
 git checkout -t origin/source  
 bundle install  
@@ -37,4 +37,4 @@ bundle install
 
 ### 编写完成后
 
-编写完成后提交pull request，其中base是sklcc的source分支，head fork是你的source分支，在本例中head fork是andycoder7的source。然后sklcc会对pull request进行审核和处理，如果没有问题的话会接受request，然后会使用`rake generate`生成jeklly需要的静态文件，然后使用'rake deploy'把文件部署到master分支。此时，你就可以在[sklcc.github.com](http://sklcc.github.com)上看到你的博客啦。
+编写完成后提交pull request，其中base是sklcc的source分支，head fork是你的source分支，在本例中head fork是andycoder7的source。然后sklcc会对pull request进行审核和处理，如果没有问题的话会接受request，然后会使用`rake generate`生成jeklly需要的静态文件，然后使用'rake deploy'把文件部署到master分支。此时，你就可以在[sklcc-library.github.com](http://sklcc-library.github.com)上看到你的博客啦。

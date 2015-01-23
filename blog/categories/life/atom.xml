@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Life | SKLCC's 藏经阁]]></title>
-  <link href="http://SKLCC.github.io/blog/categories/life/atom.xml" rel="self"/>
-  <link href="http://SKLCC.github.io/"/>
-  <updated>2014-12-03T03:01:25+08:00</updated>
-  <id>http://SKLCC.github.io/</id>
+  <title><![CDATA[Category: Life | SKLCC's 图书馆]]></title>
+  <link href="http://SKLCC-Library.github.io/blog/categories/life/atom.xml" rel="self"/>
+  <link href="http://SKLCC-Library.github.io/"/>
+  <updated>2015-01-23T22:54:15+08:00</updated>
+  <id>http://SKLCC-Library.github.io/</id>
   <author>
     <name><![CDATA[SKLCC]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[你好,中国]]></title>
-    <link href="http://SKLCC.github.io/blog/2014/09/05/ni-hao/"/>
+    <link href="http://SKLCC-Library.github.io/blog/2014/09/05/ni-hao/"/>
     <updated>2014-09-05T11:53:37+08:00</updated>
-    <id>http://SKLCC.github.io/blog/2014/09/05/ni-hao</id>
+    <id>http://SKLCC-Library.github.io/blog/2014/09/05/ni-hao</id>
     <content type="html"><![CDATA[<p>From Mike at Hangzhou mogujie.com</p>
 
 <p>你只看到我的代码，却没看到我的努力，你有你的IDE,我有我的作VIM，你嘲笑我
