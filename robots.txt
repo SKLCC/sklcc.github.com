@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://SKLCC-Library.github.io/sitemap.xml 
+Sitemap: http://SKLCC.github.io/sitemap.xml 
